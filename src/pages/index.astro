@@ -10,4 +10,69 @@ const html = marked.parse(home.content) as string;
   <h1>{site.site.name}</h1>
   <p class="tagline">{site.site.tagline}</p>
   <article set:html={html} />
+
+  <!-- ══ PROGRAMS SECTION ══ -->
+  <section class="programs-section">
+    <div class="programs-header">
+      <h2 class="programs-heading">Six programs, one arc.</h2>
+      <p class="programs-standfirst">A child can meet us in kindergarten and still be with us at nineteen — first as a reader, then as a mentee, then on our payroll.</p>
+    </div>
+
+    <!-- 01 Flagship -->
+    <div class="program-flagship">
+      <span class="program-flagship-label">01 — Flagship</span>
+      <a class="program-flagship-title" href="/read-2-succeed">Read 2 Succeed</a>
+      <p class="program-flagship-body">One-to-one reading, phonics and vocabulary tutoring for children in kindergarten through second grade, delivered inside eight public and charter schools from January to June. Volunteers need no teaching background; training, materials, fingerprinting and background checks are provided.</p>
+      <div class="program-tags">
+        <span class="program-tag">Grades K–2</span>
+        <span class="program-tag">1 hour weekly</span>
+        <span class="program-tag">Jan–Jun</span>
+        <span class="program-tag program-tag-dark">178 children, 2024–25</span>
+      </div>
+    </div>
+
+    <!-- Secondary grid -->
+    <div class="programs-grid">
+      <!-- 02 -->
+      <div class="program-card">
+        <span class="program-card-num">02</span>
+        <h3 class="program-card-title">HopeKidz</h3>
+        <p class="program-card-body">A Christian after-school club — literacy, games, a snack — running thirty weeks a year in five elementary schools. Three of the five serve NYCHA families.</p>
+        <span class="program-card-meta">65 Children Weekly · Oct–Jun · K–5</span>
+      </div>
+      <!-- 03 -->
+      <div class="program-card">
+        <span class="program-card-num">03</span>
+        <h3 class="program-card-title">Ambassadors of Peace</h3>
+        <p class="program-card-body">A thirty-week mentorship for middle and high schoolers: college and career readiness, weekly small groups on stress and emotional health, and family outreach.</p>
+        <span class="program-card-meta">30 Weeks · Grade 6 and Up</span>
+      </div>
+      <!-- 04 -->
+      <div class="program-card">
+        <span class="program-card-num">04</span>
+        <h3 class="program-card-title">Summer Youth Employment</h3>
+        <p class="program-card-body">We are an NYC SYEP employer for the third year running. Twenty-four young people worked twenty-five paid hours a week for six weeks; nine came from Park Hill.</p>
+        <span class="program-card-meta">24 Teens · Paid · City Program</span>
+      </div>
+      <!-- 05 -->
+      <div class="program-card">
+        <span class="program-card-num">05</span>
+        <h3 class="program-card-title">Summer Streets</h3>
+        <p class="program-card-body">Five simultaneous day camps across the summer, on blocks the NYPD closes for us, in the neighborhoods where the reading gap widens fastest.</p>
+        <span class="program-card-meta">5 Camps · Jul–Aug</span>
+      </div>
+      <!-- 06 -->
+      <div class="program-card">
+        <span class="program-card-num">06</span>
+        <h3 class="program-card-title">Urban Hoops</h3>
+        <p class="program-card-body">Summer blacktop tournaments and Saturday Night Lights at Curtis High School. Thirty to forty young people on a good night, and a coach who keeps showing up.</p>
+        <span class="program-card-meta">Five NYCHA Neighborhoods</span>
+      </div>
+      <!-- Through-line -->
+      <div class="program-card program-card-throughline">
+        <h3 class="throughline-heading">The through-line</h3>
+        <p class="throughline-body">Thirty-seven of last year's literacy tutors were high-school students from these same neighborhoods, several of them paid through the city's summer jobs program.</p>
+      </div>
+    </div>
+  </section>
 </Base>
