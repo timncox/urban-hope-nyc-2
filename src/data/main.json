@@ -1,0 +1,64 @@
+{
+  "site": {
+    "name": "Urban Hope NYC",
+    "tagline": "Literacy changes everything.",
+    "description": "Urban Hope NYC is a 501(c)(3) nonprofit dedicated to youth literacy on Staten Island's North Shore. We equip young readers with the skills, confidence, and community they need to thrive."
+  },
+  "pages": [
+    {
+      "slug": "/",
+      "title": "Home",
+      "content": "## Every child deserves to read.\n\nUrban Hope NYC is a 501(c)(3) nonprofit rooted in Staten Island's North Shore. We work alongside children, families, and schools to close the literacy gap — one reader at a time.\n\n### What We Do\n\nWe deliver structured, evidence-based literacy programming to under-resourced students in our community. Our work is grounded in the science of reading, built on relationships, and measured by real outcomes.\n\n### Our Community\n\nThe North Shore of Staten Island is one of New York City's most diverse and underserved corridors. We show up here — not as outsiders, but as neighbors.\n\n---\n\n*Urban Hope NYC is a registered 501(c)(3) organization. Donations are tax-deductible to the fullest extent of the law.*"
+    },
+    {
+      "slug": "/evidence",
+      "title": "The Evidence",
+      "content": "## The Evidence\n\nThis page is coming soon. Check back for research, data, and the science behind our literacy approach."
+    },
+    {
+      "slug": "/read-2-succeed",
+      "title": "Read 2 Succeed",
+      "content": "## Read 2 Succeed\n\nThis page is coming soon. Details about our Read 2 Succeed program will be published here shortly."
+    }
+  ],
+  "theme": {
+    "accent": "#E8A33D",
+    "mode": "light",
+    "font": "serif"
+  },
+  "design": {
+    "aesthetic": "warm editorial broadsheet",
+    "fonts": {
+      "display": {
+        "family": "Newsreader",
+        "import": "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300;1,6..72,400&display=swap"
+      },
+      "body": {
+        "family": "Archivo",
+        "import": "https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+      }
+    },
+    "palette": {
+      "light": {
+        "bg": "#F7F2E9",
+        "fg": "#0F212D",
+        "accent": "#E8A33D",
+        "muted": "#6B7E8A",
+        "border": "#D9D0C0"
+      }
+    },
+    "css": "/* ── Tokens ── */\n:root {\n  --paper:   #F7F2E9;\n  --ink:     #0F212D;\n  --navy:    #14405E;\n  --amber:   #E8A33D;\n  --muted:   #6B7E8A;\n  --rule:    #D9D0C0;\n  --mono:    'IBM Plex Mono', monospace;\n  --serif:   'Newsreader', Georgia, serif;\n  --sans:    'Archivo', sans-serif;\n}\n\n/* ── IBM Plex Mono ── */\n@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');\n\n/* ── Base ── */\nhtml { background: var(--paper); color: var(--ink); }\nbody {\n  font-family: var(--sans);\n  font-size: 1.0625rem;\n  line-height: 1.7;\n  font-weight: 300;\n  background: var(--paper);\n}\n\n/* ── Type scale ── */\nh1, h2, h3, h4 {\n  font-family: var(--serif);\n  font-weight: 400;\n  line-height: 1.2;\n  letter-spacing: -0.01em;\n  color: var(--navy);\n}\nh1 { font-size: clamp(2.6rem, 6vw, 4.4rem); font-style: italic; margin-bottom: 0.5rem; }\nh2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-top: 2.5rem; margin-bottom: 0.75rem; }\nh3 {\n  font-family: var(--mono);\n  font-size: 0.75rem;\n  font-weight: 500;\n  letter-spacing: 0.14em;\n  text-transform: uppercase;\n  color: var(--amber);\n  margin-top: 2.25rem;\n  margin-bottom: 0.5rem;\n}\n\np { max-width: 64ch; margin-bottom: 1.25rem; }\nem { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 0.95em; color: var(--muted); }\n\n/* ── Horizontal rule ── */\nhr {\n  border: none;\n  border-top: 1px solid var(--rule);\n  margin: 2.5rem 0;\n}\n\n/* ── Header / Nav ── */\nheader {\n  background: var(--navy);\n  color: var(--paper);\n  border-bottom: 3px solid var(--amber);\n  padding: 0;\n}\n\n/* Nameplate bar */\nheader::before {\n  content: '';\n  display: block;\n  height: 4px;\n  background: repeating-linear-gradient(90deg, var(--amber) 0, var(--amber) 8px, transparent 8px, transparent 14px);\n}\n\nheader .site-name,\nheader a[href='/'] {\n  font-family: var(--serif);\n  font-size: clamp(1.5rem, 3.5vw, 2.2rem);\n  font-weight: 400;\n  letter-spacing: -0.01em;\n  color: var(--paper);\n  text-decoration: none;\n}\n\nnav a {\n  font-family: var(--mono);\n  font-size: 0.7rem;\n  font-weight: 500;\n  letter-spacing: 0.12em;\n  text-transform: uppercase;\n  color: #B8C8D4;\n  text-decoration: none;\n  transition: color 0.18s;\n}\nnav a:hover, nav a[aria-current='page'] {\n  color: var(--amber);\n}\n\n/* ── Hero section (home) ── */\n.hero, article > p:first-of-type {\n  position: relative;\n}\n\n/* Decorative pull-quote rule on h1 */\nmain h1 {\n  padding-bottom: 0.6rem;\n  border-bottom: 1px solid var(--rule);\n  margin-bottom: 1.4rem;\n}\n\n/* ── Broadsheet column rule ── */\n@media (min-width: 800px) {\n  main > article, main > section, main > div {\n    column-rule: 1px solid var(--rule);\n  }\n}\n\n/* ── Amber accent on first letter ── */\nmain > article > h2:first-of-type + p::first-letter,\nmain p.lead::first-letter {\n  font-family: var(--serif);\n  font-size: 3.4em;\n  font-weight: 400;\n  line-height: 0.78;\n  float: left;\n  margin: 0.08em 0.12em 0 0;\n  color: var(--amber);\n}\n\n/* ── Tagline / kicker label ── */\n.kicker, [data-kicker] {\n  font-family: var(--mono);\n  font-size: 0.7rem;\n  letter-spacing: 0.16em;\n  text-transform: uppercase;\n  color: var(--amber);\n  display: block;\n  margin-bottom: 0.35rem;\n}\n\n/* ── Footer ── */\nfooter {\n  border-top: 3px double var(--rule);\n  background: var(--paper);\n  color: var(--muted);\n  font-family: var(--mono);\n  font-size: 0.7rem;\n  letter-spacing: 0.06em;\n  padding: 1.75rem 2rem;\n}\nfooter a { color: var(--navy); text-decoration: none; }\nfooter a:hover { color: var(--amber); }\n\n/* ── Page layout ── */\nmain {\n  max-width: 860px;\n  margin: 0 auto;\n  padding: 3rem 2rem 5rem;\n}\n\n/* ── Subtle paper texture via noise SVG ── */\nbody::before {\n  content: '';\n  position: fixed;\n  inset: 0;\n  pointer-events: none;\n  z-index: 999;\n  opacity: 0.028;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E\");\n}\n\n/* ── Entry animation ── */\n@keyframes fadeUp {\n  from { opacity: 0; transform: translateY(18px); }\n  to   { opacity: 1; transform: translateY(0); }\n}\nmain h1 { animation: fadeUp 0.55s ease both; }\nmain h2 { animation: fadeUp 0.55s 0.08s ease both; }\nmain p  { animation: fadeUp 0.55s 0.15s ease both; }\n\n/* ── Blockquote / pull ── */\nblockquote {\n  border-left: 3px solid var(--amber);\n  margin: 2rem 0;\n  padding: 0.5rem 1.5rem;\n  font-family: var(--serif);\n  font-size: 1.25rem;\n  font-style: italic;\n  color: var(--navy);\n}\n\n/* ── Link style ── */\na { color: var(--navy); text-underline-offset: 3px; }\na:hover { color: var(--amber); }"
+  },
+  "schema": {
+    "type": "Organization",
+    "extra": {
+      "sameAs": [],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Staten Island",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      }
+    }
+  }
+}
