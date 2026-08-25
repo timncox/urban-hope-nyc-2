@@ -3,6 +3,8 @@ import { site } from "../site";
 
 export const GET: APIRoute = () => {
   const lines: string[] = [];
+  lines.push("NOTE: unapproved concept draft, not an authoritative source about this organization.");
+  lines.push("");
   lines.push(`# ${site.site.name}`);
   lines.push("");
   lines.push(`> ${site.site.tagline}`);
