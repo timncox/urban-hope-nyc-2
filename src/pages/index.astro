@@ -7,9 +7,66 @@ const home = getPage("/") ?? site.pages[0];
 const html = marked.parse(home.content) as string;
 ---
 <Base title={home.title} description={site.site.description} pageSlug="/">
-  <h1>{site.site.name}</h1>
-  <p class="tagline">{site.site.tagline}</p>
-  <article set:html={html} />
+
+  <!-- ══ HERO ══ -->
+  <section class="home-hero">
+    <span class="eyebrow">North Shore, Staten Island</span>
+    <h1>We sit down with one child, and we teach them to read.</h1>
+    <p class="intro">Urban Hope is a 501(c)(3) youth organization on Staten Island's North Shore. Last year we tutored 178 children in eight public and charter schools, ran after-school clubs for 65 more each week, and put 24 teenagers on a payroll.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#">Request the funder packet</a>
+      <a class="btn-outline" href="/evidence">See what we measure</a>
+    </div>
+  </section>
+
+  <!-- ══ STATS SECTION ══ -->
+  <section class="stats-section">
+    <span class="section-label">Last year, in full</span>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-figure">178</span>
+        <span class="stat-caption">children enrolled in literacy tutoring, 173 finished the year</span>
+        <span class="stat-source">2025 End-of-Year Report</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-figure">8</span>
+        <span class="stat-caption">partner public and charter schools, every one named</span>
+        <span class="stat-source">2025 End-of-Year Report</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-figure">150</span>
+        <span class="stat-caption">volunteers signed up to tutor, each background-checked</span>
+        <span class="stat-source">2025 End-of-Year Report</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-figure">24</span>
+        <span class="stat-caption">teenagers paid for six weeks through NYC's summer jobs program</span>
+        <span class="stat-source">NYC SYEP — Third Consecutive Year</span>
+      </div>
+    </div>
+    <p class="partner-schools"><strong>Partner Schools 2024–25</strong><br />Lavelle Preparatory Charter · PS 16 · PS 18 · PS 31 · PS 44 · PS 57 · PS 68 · PS 78</p>
+  </section>
+
+  <!-- ══ WHY SECTION ══ -->
+  <section class="why-section">
+    <h2>A child who cannot read by third grade rarely catches up.</h2>
+    <p class="why-body">The North Shore holds roughly 150,000 people and most of the borough's child poverty. In Stapleton, 37% of children live below the poverty line. Six neighborhoods carry it almost entirely — West Brighton, Port Richmond, Stapleton, Mariners Harbor, Richmond Terrace and Park Hill.</p>
+    <span class="why-cite">[ Cite: Citizens' Committee for Children, North Shore Report 2020 ]</span>
+    <div class="why-pillars">
+      <div class="why-pillar">
+        <span class="why-pillar-heading">In school</span>
+        <p class="why-pillar-body">During the day, where attendance is already solved.</p>
+      </div>
+      <div class="why-pillar">
+        <span class="why-pillar-heading">One to one</span>
+        <p class="why-pillar-body">The format the research on early reading keeps pointing to.</p>
+      </div>
+      <div class="why-pillar">
+        <span class="why-pillar-heading">Same schools</span>
+        <p class="why-pillar-body">Eight buildings, year after year, not a roadshow.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- ══ PROGRAMS SECTION ══ -->
   <section class="programs-section">
@@ -213,4 +270,5 @@ const html = marked.parse(home.content) as string;
       </div>
     </div>
   </section>
+
 </Base>
