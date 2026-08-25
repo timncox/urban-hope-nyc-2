@@ -95,15 +95,24 @@ const html = marked.parse(home.content) as string;
     </div>
 
     <!-- 01 Flagship -->
-    <div class="program-flagship">
-      <span class="program-flagship-label">01 — Flagship</span>
-      <a class="program-flagship-title" href="/read-2-succeed">Read 2 Succeed</a>
-      <p class="program-flagship-body">One-to-one reading, phonics and vocabulary tutoring for children in kindergarten through second grade, delivered inside eight public and charter schools from January to June. Volunteers need no teaching background; training, materials, fingerprinting and background checks are provided.</p>
-      <div class="program-tags">
-        <span class="program-tag">Grades K–2</span>
-        <span class="program-tag">1 hour weekly</span>
-        <span class="program-tag">Jan–Jun</span>
-        <span class="program-tag program-tag-dark">178 children, 2024–25</span>
+    <div class="program-flagship program-flagship-photo">
+      <div class="program-flagship-img-col">
+        <img
+          src="/reading.jpg"
+          alt="A Read 2 Succeed tutor and student reading together"
+          class="program-flagship-cover"
+        />
+      </div>
+      <div class="program-flagship-content">
+        <span class="program-flagship-label">01 — Flagship</span>
+        <a class="program-flagship-title" href="/read-2-succeed">Read 2 Succeed</a>
+        <p class="program-flagship-body">One-to-one reading, phonics and vocabulary tutoring for children in kindergarten through second grade, delivered inside eight public and charter schools from January to June. Volunteers need no teaching background; training, materials, fingerprinting and background checks are provided.</p>
+        <div class="program-tags">
+          <span class="program-tag">Grades K–2</span>
+          <span class="program-tag">1 hour weekly</span>
+          <span class="program-tag">Jan–Jun</span>
+          <span class="program-tag program-tag-dark">178 children, 2024–25</span>
+        </div>
       </div>
     </div>
 
@@ -446,6 +455,44 @@ const html = marked.parse(home.content) as string;
   line-height: 1.5;
   color: #B8CDD9;
   display: block;
+}
+
+/* ══ FLAGSHIP CARD — PHOTO + CONTENT TWO-COLUMN ══ */
+.program-flagship-photo {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  padding: 0;
+  overflow: hidden;
+}
+@media (max-width: 800px) {
+  .program-flagship-photo {
+    grid-template-columns: 1fr;
+  }
+}
+.program-flagship-img-col {
+  overflow: hidden;
+  /* Stretch full height of the card */
+  min-height: 100%;
+}
+.program-flagship-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+}
+@media (max-width: 800px) {
+  .program-flagship-img-col {
+    height: 220px;
+    min-height: 220px;
+  }
+  .program-flagship-cover {
+    height: 220px;
+  }
+}
+.program-flagship-content {
+  padding: 2.25rem 2.25rem 2rem;
 }
 
 /* ══ WHO WE ARE — PHOTO + TEXT LAYOUT ══ */
