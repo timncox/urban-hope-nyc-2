@@ -163,9 +163,15 @@ const navPages = getNonHomePages();
       .tagline { color: var(--muted); font-size: 1.1rem; margin: 0 0 2rem; }
 
       footer.site {
-        margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
-        color: var(--muted); font-size: 0.9rem;
-        display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        margin-top: 0;
+        padding: 0;
+        border-top: none;
+        color: inherit;
+        font-size: inherit;
+        display: block;
+        justify-content: unset;
+        gap: unset;
+        flex-wrap: unset;
       }
     </style>
 
@@ -190,8 +196,12 @@ const navPages = getNonHomePages();
       </main>
 
       <footer class="site">
-        <span>© {new Date().getFullYear()} {site.site.name}</span>
-        <span>built with <a href="https://github.com/" rel="noopener">weft</a></span>
+        <div class="footer-inner">
+          <span class="footer-tagline">No sheep without a shepherd.</span>
+          <p class="footer-address">77 Alaska Street, Staten Island, NY 10310</p>
+          <p class="footer-inbox">[ Shared inbox to be set up ]</p>
+          <p class="footer-bottom">© 2026 Urban Hope Inc. · 501(c)(3) · EIN 27-4637480</p>
+        </div>
       </footer>
     </div>
   </body>
