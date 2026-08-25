@@ -10,12 +10,27 @@ const html = marked.parse(home.content) as string;
 
   <!-- ══ HERO ══ -->
   <section class="home-hero">
-    <span class="eyebrow">North Shore, Staten Island</span>
-    <h1>We sit down with one child, and we teach them to read.</h1>
-    <p class="intro">Urban Hope is a 501(c)(3) youth organization on Staten Island's North Shore. Last year we tutored 178 children in eight public and charter schools, ran after-school clubs for 65 more each week, and put 24 teenagers on a payroll.</p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="#">Request the funder packet</a>
-      <a class="btn-outline" href="/evidence">See what we measure</a>
+    <div class="home-hero-inner">
+      <div class="home-hero-text">
+        <span class="eyebrow">North Shore, Staten Island</span>
+        <h1>We sit down with one child, and we teach them to read.</h1>
+        <p class="intro">Urban Hope is a 501(c)(3) youth organization on Staten Island's North Shore. Last year we tutored 178 children in eight public and charter schools, ran after-school clubs for 65 more each week, and put 24 teenagers on a payroll.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#">Request the funder packet</a>
+          <a class="btn-outline" href="/evidence">See what we measure</a>
+        </div>
+      </div>
+      <div class="home-hero-photo">
+        <img
+          src="/reading.jpg"
+          alt="An Urban Hope tutor reading one-to-one with an elementary student in a Staten Island classroom."
+          class="hero-photo-img"
+        />
+        <div class="hero-photo-caption">
+          <span class="hero-photo-label">READ 2 SUCCEED</span>
+          <span class="hero-photo-sub">One child, one hour, once a week, January to June — inside the school day.</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -204,26 +219,49 @@ const html = marked.parse(home.content) as string;
 
   <!-- ══ WHO WE ARE SECTION ══ -->
   <section class="who-section">
-    <h2 class="who-heading">A neighborhood organization, not a visiting one.</h2>
-    <p class="who-body">Our founder, David Beidel, moved onto the North Shore thirty years ago and stayed. Urban Hope was recognized as a 501(c)(3) in 2011 and is led today by executive director Chad McVann, with a board of nine.</p>
-    <p class="who-body">We are a faith-based organization and we say so plainly, because our volunteers and decades of neighborhood trust come from the churches of Staten Island. Read 2 Succeed runs inside DOE buildings and is literacy tutoring only. HopeKidz is an explicitly Christian club that families opt into. We keep that line bright, and we will walk any funder through it.</p>
+    <div class="who-inner">
+      <div class="who-photo-grid">
+        <img
+          src="/outreach.jpg"
+          alt="Urban Hope volunteers at a community outreach event"
+          class="who-photo who-photo-top"
+        />
+        <div class="who-photo-row">
+          <img
+            src="/care.jpg"
+            alt="Urban Hope staff and volunteers gathered around a family"
+            class="who-photo who-photo-half"
+          />
+          <img
+            src="/team.jpg"
+            alt="A short-term mission volunteer team serving with Urban Hope"
+            class="who-photo who-photo-half"
+          />
+        </div>
+      </div>
+      <div class="who-text">
+        <h2 class="who-heading">A neighborhood organization, not a visiting one.</h2>
+        <p class="who-body">Our founder, David Beidel, moved onto the North Shore thirty years ago and stayed. Urban Hope was recognized as a 501(c)(3) in 2011 and is led today by executive director Chad McVann, with a board of nine.</p>
+        <p class="who-body">We are a faith-based organization and we say so plainly, because our volunteers and decades of neighborhood trust come from the churches of Staten Island. Read 2 Succeed runs inside DOE buildings and is literacy tutoring only. HopeKidz is an explicitly Christian club that families opt into. We keep that line bright, and we will walk any funder through it.</p>
 
-    <div class="credentials-grid">
-      <div class="credential-card">
-        <span class="credential-label">Affiliate</span>
-        <span class="credential-name">Hope for New York</span>
-      </div>
-      <div class="credential-card">
-        <span class="credential-label">Employer</span>
-        <span class="credential-name">NYC SYEP, 3rd year</span>
-      </div>
-      <div class="credential-card">
-        <span class="credential-label">Anchor</span>
-        <span class="credential-name">C3 Clergy Task Force</span>
-      </div>
-      <div class="credential-card">
-        <span class="credential-label">Network</span>
-        <span class="credential-name">Care Portal</span>
+        <div class="credentials-grid">
+          <div class="credential-card">
+            <span class="credential-label">Affiliate</span>
+            <span class="credential-name">Hope for New York</span>
+          </div>
+          <div class="credential-card">
+            <span class="credential-label">Employer</span>
+            <span class="credential-name">NYC SYEP, 3rd year</span>
+          </div>
+          <div class="credential-card">
+            <span class="credential-label">Anchor</span>
+            <span class="credential-name">C3 Clergy Task Force</span>
+          </div>
+          <div class="credential-card">
+            <span class="credential-label">Network</span>
+            <span class="credential-name">Care Portal</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -272,3 +310,123 @@ const html = marked.parse(home.content) as string;
   </section>
 
 </Base>
+
+<style>
+/* ══ HERO TWO-COLUMN LAYOUT ══ */
+.home-hero {
+  padding: 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.home-hero-inner {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: stretch;
+  min-height: 480px;
+}
+@media (max-width: 800px) {
+  .home-hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+.home-hero-text {
+  padding: 3.5rem 2.5rem 3.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 800px) {
+  .home-hero-text {
+    padding: 3rem 0 2.5rem;
+  }
+}
+.home-hero-photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+}
+@media (max-width: 800px) {
+  .home-hero-photo {
+    min-height: 280px;
+    margin: 0 calc(-1 * var(--content-pad));
+  }
+}
+.hero-photo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+}
+.hero-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(15, 33, 45, 0.88);
+  padding: 0.85rem 1.1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  max-width: 28ch;
+}
+.hero-photo-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: block;
+}
+.hero-photo-sub {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #B8CDD9;
+  display: block;
+}
+
+/* ══ WHO WE ARE — PHOTO + TEXT LAYOUT ══ */
+.who-section {
+  padding: 4.5rem var(--content-pad) 5rem;
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+}
+.who-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .who-inner {
+    grid-template-columns: 1fr;
+  }
+}
+.who-photo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.who-photo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+.who-photo-top {
+  height: 230px;
+}
+.who-photo-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.who-photo-half {
+  height: 175px;
+}
+.who-text {}
+</style>
