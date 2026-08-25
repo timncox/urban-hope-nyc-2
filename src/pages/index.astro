@@ -328,8 +328,10 @@ const html = marked.parse(home.content) as string;
    same max-width and padding so content stays aligned with surrounding sections.
 */
 .full-bleed {
-  margin-left: calc(-1 * var(--content-pad));
-  margin-right: calc(-1 * var(--content-pad));
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 .bleed-inner {
   max-width: calc(var(--content-max) + 2 * var(--content-pad));
