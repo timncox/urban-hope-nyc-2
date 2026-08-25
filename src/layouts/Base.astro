@@ -98,6 +98,8 @@ const navPages = getNonHomePages();
         --muted: var(--mutedLight);
         --border: var(--borderLight);
         --radius: 6px;
+        --content-max: 1240px;
+        --content-pad: 2.5rem;
       }
       :root[data-theme="dark"] {
         --bg: var(--bgDark);
@@ -114,6 +116,12 @@ const navPages = getNonHomePages();
         }
       }
 
+      @media (max-width: 700px) {
+        :root {
+          --content-pad: 1.25rem;
+        }
+      }
+
       * { box-sizing: border-box; }
       html, body { margin: 0; padding: 0; }
       body {
@@ -125,7 +133,7 @@ const navPages = getNonHomePages();
       }
       a { color: var(--accent); text-decoration: none; }
       a:hover { text-decoration: underline; }
-      .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+      .container { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--content-pad) 4rem; }
 
       .draft-notice {
         background: #0F212D;
@@ -153,9 +161,9 @@ const navPages = getNonHomePages();
       }
 
       .site-header-inner {
-        max-width: 860px;
+        max-width: var(--content-max);
         margin: 0 auto;
-        padding: 0.85rem 1.25rem;
+        padding: 0.85rem var(--content-pad);
         display: flex;
         align-items: center;
         justify-content: space-between;
