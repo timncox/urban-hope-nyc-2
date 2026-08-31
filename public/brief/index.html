@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Urban Hope Redesign — Urban Hope NYC</title>
+<meta name="description" content="Working brief for Urban Hope Inc: the direction behind the concept redesign, the resolved FY2023 990 finding, open asks, and seven questions.">
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F7F2E9; --surface:#FFFFFF; --sunk:#EFE8DB;
+  --ink:#0F212D; --ink-2:#3C5060; --muted:#5A6771;
+  --rule:#DED4C2; --rule-soft:#E9E0D0;
+  --accent:#96590A; --accent-bright:#E8A33D; --accent-wash:#FBF0DC;
+  --flag:#9A3F2B; --flag-wash:#F7E5DF;
+  --deep:#14405E; --deep-wash:#E8EEF3;
+  --sans:Archivo,"Helvetica Neue",Arial,sans-serif;
+  --serif:Newsreader,Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --measure:66ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F212D; --surface:#162C3A; --sunk:#1B3444;
+    --ink:#EFE8DB; --ink-2:#C3CDD4; --muted:#93A3AD;
+    --rule:#2C4557; --rule-soft:#233B4B;
+    --accent:#E8A33D; --accent-bright:#E8A33D; --accent-wash:#26313A;
+    --flag:#E0876B; --flag-wash:#33272A;
+    --deep:#8FB0C6; --deep-wash:#1C3245;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F212D; --surface:#162C3A; --sunk:#1B3444;
+  --ink:#EFE8DB; --ink-2:#C3CDD4; --muted:#93A3AD;
+  --rule:#2C4557; --rule-soft:#233B4B;
+  --accent:#E8A33D; --accent-bright:#E8A33D; --accent-wash:#26313A;
+  --flag:#E0876B; --flag-wash:#33272A;
+  --deep:#8FB0C6; --deep-wash:#1C3245;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 28px}
+
+/* ---------- masthead ---------- */
+header.top{border-bottom:2px solid var(--ink); padding:60px 0 30px}
+.eyebrow{
+  font-family:var(--mono); font-size:11.5px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 22px;
+}
+h1{
+  font-family:var(--sans); font-weight:800; letter-spacing:-.025em;
+  font-size:clamp(38px,6.6vw,72px); line-height:1.0; margin:0; text-wrap:balance;
+}
+.standfirst{
+  font-family:var(--serif); font-size:clamp(18px,2.2vw,21px); line-height:1.5;
+  color:var(--ink-2); max-width:62ch; margin:22px 0 0;
+}
+.datum{
+  font-family:var(--mono); font-size:12px; color:var(--muted); margin-top:26px;
+}
+
+/* ---------- the site callout ---------- */
+.sitebox{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:18px 28px; margin:34px 0 0; padding:22px 26px;
+  border:2px solid var(--ink); background:var(--surface);
+}
+.sitebox .lead{font-family:var(--sans); font-weight:700; font-size:19px; margin:0}
+.sitebox .sub{font-family:var(--serif); color:var(--ink-2); margin:6px 0 0; font-size:16px; max-width:52ch}
+.btn{
+  font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
+  background:var(--ink); color:var(--paper); padding:13px 20px; text-decoration:none;
+  white-space:nowrap; flex:none;
+}
+.btn:hover,.btn:focus-visible{background:var(--accent); color:#fff}
+
+/* ---------- jump nav ---------- */
+nav.jump{
+  position:sticky; top:0; z-index:20; background:var(--paper);
+  border-bottom:1px solid var(--rule); margin-top:0;
+}
+nav.jump ul{
+  list-style:none; margin:0 auto; padding:0 28px; max-width:1080px;
+  display:flex; flex-wrap:wrap; gap:0 26px;
+}
+nav.jump a{
+  display:block; padding:14px 0; text-decoration:none; color:var(--muted);
+  font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  border-bottom:2px solid transparent;
+}
+nav.jump a:hover,nav.jump a:focus-visible{color:var(--ink); border-bottom-color:var(--accent)}
+
+/* ---------- parts & sections ---------- */
+.part{padding:64px 0 8px; scroll-margin-top:60px}
+.parthead{display:flex; align-items:baseline; gap:16px; border-bottom:1px solid var(--ink); padding-bottom:12px}
+.partmark{
+  font-family:var(--mono); font-size:13px; font-weight:600; color:var(--paper);
+  background:var(--ink); padding:3px 9px; letter-spacing:.04em; flex:none;
+}
+h2{
+  font-family:var(--sans); font-weight:700; letter-spacing:-.015em;
+  font-size:clamp(21px,2.7vw,28px); line-height:1.18; margin:0; text-wrap:balance;
+}
+.partnote{font-family:var(--serif); font-style:italic; color:var(--muted); font-size:16px; margin:14px 0 0; max-width:var(--measure)}
+
+h3{
+  font-family:var(--sans); font-weight:700; font-size:clamp(19px,2.2vw,23px);
+  letter-spacing:-.012em; line-height:1.25; margin:0; text-wrap:balance; max-width:var(--measure);
+}
+.sub{font-family:var(--serif)}
+.move{padding:40px 0 8px; border-bottom:1px solid var(--rule-soft)}
+.move:last-of-type{border-bottom:0}
+.movenum{
+  font-family:var(--mono); font-size:12px; font-weight:600; color:var(--accent);
+  letter-spacing:.1em; display:block; margin-bottom:10px;
+}
+p.txt{font-family:var(--serif); font-size:16.5px; line-height:1.62; color:var(--ink-2); max-width:var(--measure); margin:14px 0 0}
+p.txt strong{font-weight:600; color:var(--ink)}
+p.txt em{color:var(--muted)}
+
+/* ---------- the 990 panel ---------- */
+.settled{
+  border:1px solid var(--deep); background:var(--deep-wash);
+  padding:28px 30px; margin:30px 0 0;
+}
+.settled .kicker{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--deep); margin:0 0 12px;
+}
+.settled h3{margin:0}
+.figscroll{overflow-x:auto; margin:20px 0 4px}
+table.fig{border-collapse:collapse; width:100%; min-width:460px; font-variant-numeric:tabular-nums}
+table.fig th,table.fig td{text-align:right; padding:9px 14px; border-bottom:1px solid var(--rule-soft); font-family:var(--mono); font-size:13px}
+table.fig th:first-child,table.fig td:first-child{text-align:left}
+table.fig thead th{font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--rule)}
+table.fig tbody tr.live td{background:var(--accent-wash); font-weight:500}
+table.fig tbody tr.dead td{color:var(--muted); text-decoration:line-through}
+.figcap{font-family:var(--mono); font-size:11px; color:var(--muted); margin:9px 0 0}
+
+/* ---------- today vs proposed ---------- */
+.compare{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); margin:26px 0 0}
+.col{background:var(--surface); padding:22px 24px}
+.col .lab{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:0 0 14px}
+.col.now .lab{color:var(--flag)}
+.col.next .lab{color:var(--accent)}
+.col ul{list-style:none; margin:0; padding:0; display:grid; gap:8px}
+.col li{font-family:var(--mono); font-size:13.5px; color:var(--ink); font-variant-numeric:tabular-nums}
+.col .verdict{font-family:var(--serif); font-style:italic; color:var(--muted); font-size:15px; margin:16px 0 0}
+
+/* ---------- our view ---------- */
+.view{border-left:3px solid var(--accent-bright); background:var(--accent-wash); padding:20px 24px; margin:26px 0 0}
+.view .lab{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin:0 0 10px}
+.view p{font-family:var(--serif); font-size:16.5px; line-height:1.6; color:var(--ink); margin:0; max-width:var(--measure)}
+.view p strong{font-weight:600}
+
+/* ---------- reason lists ---------- */
+.reasons{display:grid; gap:14px; margin:22px 0 0; max-width:var(--measure)}
+.reason{display:grid; grid-template-columns:26px 1fr; gap:0 14px}
+.reason .m{font-family:var(--mono); font-size:12px; color:var(--accent); padding-top:4px}
+.reason p{font-family:var(--serif); font-size:16px; line-height:1.58; color:var(--ink-2); margin:0}
+.reason p strong{color:var(--ink); font-weight:600}
+
+/* ---------- left-out cards ---------- */
+.cut{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); margin:24px 0 0}
+.cutcard{background:var(--surface); padding:20px 22px}
+.cutcard .name{font-family:var(--sans); font-weight:700; font-size:16.5px; margin:0}
+.cutcard .state{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--flag); margin:7px 0 12px}
+.cutcard p{font-family:var(--serif); font-size:15.5px; line-height:1.55; color:var(--ink-2); margin:0}
+
+/* ---------- trade trio ---------- */
+.trio{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; margin:26px 0 0}
+.trio h4{font-family:var(--sans); font-weight:700; font-size:15.5px; margin:0 0 8px; color:var(--ink)}
+.trio p{font-family:var(--serif); font-size:15.5px; line-height:1.55; color:var(--ink-2); margin:0}
+
+/* ---------- items ---------- */
+.sechead{display:flex; align-items:baseline; gap:14px; margin:44px 0 0; padding-bottom:10px; border-bottom:1px solid var(--rule)}
+.sechead .letter{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent)}
+.sechead h3{font-size:19px}
+.items{list-style:none; margin:0; padding:0}
+.item{display:grid; grid-template-columns:52px 1fr; gap:0 20px; padding:24px 0; border-bottom:1px solid var(--rule-soft)}
+.item:last-child{border-bottom:0}
+.n{font-family:var(--mono); font-size:14px; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums; padding-top:3px}
+.blocking .n{color:var(--flag)}
+.ask{font-family:var(--sans); font-weight:650; font-size:18px; line-height:1.35; letter-spacing:-.008em; margin:0; max-width:var(--measure); text-wrap:balance}
+.why{font-family:var(--serif); font-size:16.5px; line-height:1.6; color:var(--ink-2); max-width:var(--measure); margin:10px 0 0}
+.why + .why{margin-top:9px}
+.why strong{font-weight:600; color:var(--ink)}
+.why em{color:var(--muted)}
+.chip{display:inline-block; font-family:var(--mono); font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; padding:3px 8px; margin:0 0 10px; border:1px solid currentColor}
+.chip.resolved{color:var(--deep)}
+.chip.gap{color:var(--flag); background:var(--flag-wash); border-color:transparent}
+
+/* ---------- documents ---------- */
+.docs{list-style:none; margin:22px 0 0; padding:0; display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule)}
+.docs li{background:var(--surface); padding:14px 20px; font-size:16px; display:flex; gap:14px; align-items:baseline}
+.docs li::before{content:"—"; font-family:var(--mono); color:var(--accent); flex:none}
+.docs li span{color:var(--muted); font-family:var(--serif); font-style:italic}
+
+/* ---------- decisions ---------- */
+.decisions{list-style:none; margin:0; padding:0; counter-reset:d}
+.decision{padding:24px 0; border-bottom:1px solid var(--rule-soft); display:grid; grid-template-columns:52px 1fr; gap:0 20px}
+.decision:last-child{border-bottom:0}
+.decision .n{counter-increment:d; color:var(--accent)}
+.decision .n::before{content:counter(d)}
+.decision.lead .ask{font-size:21px}
+
+/* ---------- identity appendix ---------- */
+.concept{font-family:var(--serif); font-size:19px; line-height:1.5; color:var(--ink); max-width:56ch; margin:26px 0 0}
+.lockups{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); margin:26px 0 0}
+.lock{padding:34px 28px; display:flex; flex-direction:column; gap:24px; align-items:flex-start; justify-content:space-between}
+.lock .wordmark{display:flex; align-items:center; gap:13px}
+.lock .wm1{font-family:var(--sans); font-weight:800; font-size:20px; letter-spacing:.02em; line-height:1}
+.lock .wm2{font-family:var(--sans); font-weight:700; font-size:9.5px; letter-spacing:.34em; line-height:1; margin-top:4px}
+.lock .cap{font-family:var(--mono); font-size:10.5px; letter-spacing:.09em; text-transform:uppercase}
+.swatches{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:18px; margin:26px 0 0}
+.sw .plate{background:#FFFFFF; border:1px solid var(--rule); padding:9px}
+.sw .chipc{height:58px; border:1px solid rgba(15,33,45,.14)}
+.sw .nm{font-family:var(--sans); font-weight:700; font-size:14.5px; margin:11px 0 0}
+.sw .hx{font-family:var(--mono); font-size:12px; color:var(--muted); margin:3px 0 0}
+.sw .use{font-family:var(--serif); font-size:14px; color:var(--muted); margin:5px 0 0; line-height:1.4}
+.faces{display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:26px 0 0}
+.face{background:var(--surface); padding:24px 26px}
+.face .role{font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--accent); margin:0 0 14px}
+.face .spec-serif{font-family:var(--serif); font-size:34px; line-height:1.1; color:var(--ink); margin:0; font-weight:400}
+.face .spec-sans{font-family:var(--sans); font-weight:700; font-size:23px; letter-spacing:-.012em; color:var(--ink); margin:0}
+.face .spec-mono{font-family:var(--mono); font-size:12px; letter-spacing:.02em; color:var(--muted); margin:0}
+.face .gloss{font-family:var(--serif); font-size:15.5px; line-height:1.55; color:var(--ink-2); margin:12px 0 0; max-width:var(--measure)}
+
+/* ---------- footer ---------- */
+footer{margin-top:64px; border-top:2px solid var(--ink); padding:30px 0 76px}
+.livefix{font-family:var(--mono); font-size:13px; line-height:1.9; color:var(--ink-2); max-width:var(--measure)}
+.livefix code{background:var(--sunk); padding:1px 5px; color:var(--ink); font-family:var(--mono); font-size:12.5px}
+.closing{font-family:var(--serif); font-size:19px; line-height:1.5; color:var(--ink); max-width:52ch; margin:34px 0 0}
+.sign{font-family:var(--mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); margin-top:26px; line-height:1.8}
+
+a{color:var(--deep)}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+
+@media (max-width:620px){
+  .wrap{padding:0 18px}
+  nav.jump ul{padding:0 18px; gap:0 18px}
+  header.top{padding-top:40px}
+  .item,.decision{grid-template-columns:32px 1fr; gap:0 12px}
+  .sitebox{padding:20px}
+}
+@media print{
+  :root{--paper:#fff;--surface:#fff;--sunk:#f2f2f2;--deep-wash:#f4f7f9;--accent-wash:#fbf6ec}
+  body{font-size:11pt}
+  nav.jump{display:none}
+  .part{padding-top:26px; break-inside:avoid}
+  .item,.decision,.cutcard,.compare,.settled{break-inside:avoid}
+  header.top{padding-top:0}
+  footer{padding-bottom:0}
+}
+
+/* ---------- standalone-page chrome ---------- */
+.brief-bar{
+  display:flex; flex-wrap:wrap; gap:8px 24px; align-items:center; justify-content:space-between;
+  background:#0F212D; color:#E8A33D;
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; line-height:1.5;
+  padding:11px 28px; letter-spacing:.02em;
+}
+.brief-bar strong{color:#F7F2E9; font-weight:600}
+.brief-bar a{color:#E8A33D; text-decoration:none; border-bottom:1px solid rgba(232,163,61,.45); white-space:nowrap}
+.brief-bar a:hover{color:#F7F2E9; border-bottom-color:#F7F2E9}
+@media (max-width:620px){ .brief-bar{padding:11px 18px} }
+</style>
+
+<div class="brief-bar">
+  <span><strong>Working brief.</strong> Our note to you — not a page of the proposed site.</span>
+  <a href="/">Go to the draft site&nbsp;&rarr;</a>
+</div>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Urban Hope Inc · EIN 27-4637480 · Draft for discussion</p>
+  <h1>A redesign written for one reader</h1>
+  <p class="standfirst">This is a proposed rebuild of urbanhopenyc.org, aimed at a foundation program officer deciding whether to fund you. Below: why it makes the choices it makes, one thing we settled on your behalf, everything we still need from you, and seven questions whose answers change the design.</p>
+  <p class="datum">Compiled 25 August 2026 · updated 31 August · nothing here is published or indexed</p>
+
+  <div class="sitebox">
+    <div>
+      <p class="lead">The draft site is live to look at</p>
+      <p class="sub">Four pages, including a new Get Involved page. Set to noindex with a "concept" banner throughout — it does not touch your real site or your search results.</p>
+    </div>
+    <a class="btn" href="/">Open the draft&nbsp;↗</a>
+  </div>
+</header>
+
+</div>
+
+<nav class="jump">
+  <ul>
+    <li><a href="#settled">What we settled</a></li>
+    <li><a href="#direction">The direction</a></li>
+    <li><a href="#need">What we need</a></li>
+    <li><a href="#questions">Seven questions</a></li>
+    <li><a href="#identity">The identity</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ 990 ============ -->
+<section class="part" id="settled">
+  <div class="parthead"><span class="partmark">1</span><h2>One thing we settled for you</h2></div>
+
+  <div class="settled">
+    <p class="kicker">Resolved from IRS records, 26 August</p>
+    <h3>There is no 2023 deficit. The number circulating is a withdrawn one.</h3>
+    <p class="txt">Two public databases were showing different 2023 finances for you — one of them a <strong>$460,313 loss with net assets down 85%</strong>. We pulled both filings from the IRS to find out which was right. You filed 2023 <strong>twice</strong>: an original in October 2024, then an <strong>amended return in February 2025</strong> correcting how contribution revenue and program expenses had been reported.</p>
+
+    <div class="figscroll">
+      <table class="fig">
+        <thead><tr><th>FY2023 filing</th><th>Revenue</th><th>Expenses</th><th>Net</th><th>Net assets</th></tr></thead>
+        <tbody>
+          <tr class="dead"><td>Original · 31 Oct 2024</td><td>$915,551</td><td>$1,375,864</td><td>−$460,313</td><td>$79,161</td></tr>
+          <tr class="live"><td>Amended · 19 Feb 2025</td><td>$800,510</td><td>$713,638</td><td>+$86,872</td><td>$626,346</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="figcap">Source: IRS e-file, object 202520509349301027. The amended return governs.</p>
+
+    <p class="txt">The catch is that the withdrawn figures are <strong>still being served by at least one major nonprofit database</strong>. A program officer checking you today may well be looking at a deficit you did not have. That is worth fixing at the source, and worth getting ahead of on your own site — which the draft Evidence page now does.</p>
+  </div>
+</section>
+
+<!-- ============ DIRECTION ============ -->
+<section class="part" id="direction">
+  <div class="parthead"><span class="partmark">2</span><h2>The direction, and where you may disagree</h2></div>
+  <p class="partnote">Four choices worth explaining before you look at the pages.</p>
+
+  <div class="move">
+    <span class="movenum">01</span>
+    <h3>We made your numbers smaller</h3>
+    <p class="txt">This is the single biggest change, and everything else follows from it. Your site currently leads with 1,200+ youth empowered, 7,200+ families reached, 171,000 lives impacted. None of those is a lie — but they are coalition and movement totals, and they sit on a 501(c)(3) whose last filed revenue was under a million dollars. A program officer notices that gap in about ninety seconds. When they cannot reconcile your headline with your Form 990, they stop trusting the rest of the page, including the parts that are rock solid.</p>
+
+    <div class="compare">
+      <div class="col now">
+        <p class="lab">Today</p>
+        <ul>
+          <li>1,200+ youth empowered</li>
+          <li>7,200+ families reached</li>
+          <li>171,000 lives impacted</li>
+          <li>$50 million invested</li>
+          <li>35+ years of experience</li>
+        </ul>
+        <p class="verdict">Impressive, unverifiable, and not yours alone.</p>
+      </div>
+      <div class="col next">
+        <p class="lab">Proposed</p>
+        <ul>
+          <li>178 children tutored, 173 finished</li>
+          <li>8 partner schools, all named</li>
+          <li>150 volunteers signed up</li>
+          <li>24 teenagers on a payroll</li>
+          <li>501(c)(3) since 2011</li>
+        </ul>
+        <p class="verdict">Smaller, sourced, and checkable by a stranger.</p>
+      </div>
+    </div>
+
+    <p class="txt">The big numbers are not deleted. They live in a section called <em>Two different numbers, kept apart</em>, in their own column, clearly labeled as what the coalition you convene delivers. You get credit for the scale without paying the credibility tax for blending it with your own service figures.</p>
+  </div>
+
+  <div class="move">
+    <span class="movenum">02</span>
+    <h3>Why literacy leads — and why that might be wrong</h3>
+    <p class="txt"><strong>The case for it.</strong> It is your own stated flagship: listed first, eighth year running, the only program with a dedicated director. Its numbers are your best ones — 178 enrolled and 173 completed comes off a school enrollment roll, which a stranger can audit. One-to-one early reading is a funding category program officers already understand. And six programs need a spine: "one arc, kindergarten to a first paycheck" only reads as an arc if something anchors one end.</p>
+
+    <div class="reasons">
+      <div class="reason"><span class="m">01</span><p><strong>It may not be your center of gravity.</strong> By your own reporting, Jesus Week is far larger — 512 outreaches, 3,900 participants, 402 congregations. Literacy reaches 178 children. A funder who gives on a literacy pitch and later finds a largely evangelistic organization has the exact trust problem this redesign exists to prevent.</p></div>
+      <div class="reason"><span class="m">02</span><p><strong>SYEP may deserve the lead instead.</strong> Twenty-four teenagers, twenty-five paid hours a week, third year running, through a City of New York program. It is secular, it is verifiable without asking you for anything, and it currently appears nowhere on your website.</p></div>
+      <div class="reason"><span class="m">03</span><p><strong>A single focus narrows the funder set.</strong> Leading with reading optimizes for education money and quietly deprioritizes violence-prevention money, workforce money and family-services money — all of which you do real work in.</p></div>
+    </div>
+
+    <div class="view">
+      <p class="lab">Our view</p>
+      <p>Keep literacy as the visual anchor, but promote Summer Youth Employment to co-lead — <strong>we teach them to read, then we put them to work.</strong> It tells the whole kindergarten-to-payroll arc, opens workforce funding, and leans on the one program a funder can verify through the City rather than through you. <strong>We would rather hear your view than assume ours.</strong></p>
+    </div>
+  </div>
+
+  <div class="move">
+    <span class="movenum">03</span>
+    <h3>What we left out, and why</h3>
+    <div class="cut">
+      <div class="cutcard">
+        <p class="name">Game Changers</p>
+        <p class="state">Cut entirely</p>
+        <p>The page claims a 60% decrease in dropout rates and a 70% improvement in student behavior, with no source, baseline, sample or method attached. This is the highest-risk item on the current site: a program officer who cannot source one number starts doubting all of them. We would rather reinstate it with a real evaluation behind it than run it as is.</p>
+      </div>
+      <div class="cutcard">
+        <p class="name">Christmas / Winter Wonderland</p>
+        <p class="state">Held back</p>
+        <p>Genuinely large by reach, and we would like it on the site. We held it because the toy count falls from roughly 25,000 to 7,000 between the 2023 and 2024 reports with no explanation, and an unexplained 72% drop invites the wrong question. Give us one sentence of context and it goes back in.</p>
+      </div>
+      <div class="cutcard">
+        <p class="name">Care Portal</p>
+        <p class="state">Demoted</p>
+        <p>Moved out of the six-program grid to a partner credential, because it is a network you participate in rather than a program you staff. That may undersell it — it is also the clearest link between your work and the wider Safe Harbor collective. Easy to promote back if you want it counted as a program.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="move">
+    <span class="movenum">04</span>
+    <h3>Why we published your weak spots</h3>
+    <p class="txt">This will be the most uncomfortable part of the draft, so here is the reasoning in full. The Evidence page states plainly that you have no independent audit, no adopted records-retention policy, no external evaluation, and that you amended your 2023 return.</p>
+    <p class="txt">None of that is a secret. Charity Navigator already publishes the audit and retention findings, and rates you one star at 50% largely because of them. Any program officer runs that search before the first meeting. The information is going to reach them either way.</p>
+    <p class="txt">The only variable is whether they hear it from you first, next to a dated plan to fix it — or discover it in week three and quietly wonder what else they were not told. The first version reads as an organization with its eyes open. The second reads as a risk. Almost no nonprofit does this. That is exactly why it works.</p>
+
+    <div class="trio">
+      <div>
+        <h4>It is a trade, not a confession</h4>
+        <p>Every gap on the page sits beside a "by end of 2026" column. You are not admitting failure; you are publishing a work plan and inviting someone to fund it.</p>
+      </div>
+      <div>
+        <h4>The ask becomes concrete</h4>
+        <p>"Fund our first external evaluation" is a fundable sentence. "Support our mission" is not.</p>
+      </div>
+      <div>
+        <h4>If you disagree, say so</h4>
+        <p>This is a strategy, not a rule. It is your organization and your reputation, and the page can be softened or removed. We would just want to talk it through first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE NEED ============ -->
+<section class="part" id="need">
+  <div class="parthead"><span class="partmark">3</span><h2>What we need from you</h2></div>
+  <p class="partnote">Every item is either a blank we deliberately left on the draft, a place where two of your own sources disagree, a document the site promises and does not yet have, or a question raised by the new Get Involved page.</p>
+
+  <div class="sechead"><span class="letter">A</span><h3>Blocking — the site should not come out of draft until these land</h3></div>
+  <ol class="items blocking">
+
+    <li class="item">
+      <div class="n">1</div>
+      <div>
+        <span class="chip resolved">Resolved — needs your words</span>
+        <p class="ask">Your plain-English account of the FY2023 restatement — and the amended 990 as a PDF.</p>
+        <p class="why">The amended return is the good version, but your Schedule O says only that revenue and program expenses "were incorrectly reported on original tax return filed," and any program officer who sees an amended 990 will ask what happened. We need one or two sentences we can publish, plus the amended return as a PDF for the funder packet.</p>
+      </div>
+    </li>
+
+    <li class="item">
+      <div class="n">2</div>
+      <div>
+        <span class="chip gap">Held back — nowhere a funder will see it</span>
+        <p class="ask">An explanation of the FY2023 functional-expense split.</p>
+        <p class="why">The operative amended return reports <strong>program services $331,591 (46.5%)</strong>, <strong>management &amp; general $382,047 (53.5%)</strong>, and <strong>fundraising $0</strong>. Management spending exceeds program spending, and most funders screen at 65–75% program. The superseded original had shown 83.8% program — the amendment is what moved it.</p>
+        <p class="why">Either the allocation is wrong, or there is a reason for it: a build-out year, shared costs booked centrally. It is nowhere on the draft site, and it is the single most damaging number in your public record. We want your account before deciding how the site handles it. Related: $0 fundraising expense against $794,141 in contributions is itself a flag.</p>
+      </div>
+    </li>
+
+    <li class="item">
+      <div class="n">3</div>
+      <div>
+        <p class="ask">Aggregator cleanup — a decision.</p>
+        <p class="why">ProPublica's <em>web page</em> shows the corrected figures, but <strong>its API still serves the withdrawn deficit</strong>, and anything built on that API inherits a loss you did not have. Someone should ask ProPublica to refresh, and the amended 990 should be posted on your own site so the correct version is the one that ranks.</p>
+      </div>
+    </li>
+
+    <li class="item">
+      <div class="n">4</div>
+      <div>
+        <p class="ask">Cost per child, per year — and cost to adopt one school.</p>
+        <p class="why">Deliberately left blank. It is the first thing a program officer calculates, and if you don't publish it they will derive it from the wrong two numbers. The single highest-value figure missing today.</p>
+      </div>
+    </li>
+
+    <li class="item">
+      <div class="n">5</div>
+      <div>
+        <p class="ask">A shared inbox address — hello@ or grants@.</p>
+        <p class="why">Every contact route on the current site is one staff member's personal email. The draft shows a placeholder rather than publish a fake one. This now blocks the Get Involved page too: its four forms have nowhere to deliver to until this exists.</p>
+      </div>
+    </li>
+
+    <li class="item">
+      <div class="n">6</div>
+      <div>
+        <span class="chip resolved">Partly answered by the 990 itself</span>
+        <p class="ask">Sign-off on the accountability and governance rows.</p>
+        <p class="why">Your FY2023 990 states that the <strong>board reviews the 990 before filing</strong>, that directors complete an <strong>annual conflict-of-interest disclosure</strong>, and that governing documents are <strong>available on request</strong>. Charity Navigator's "no records retention policy" and "no independent audit" flags are separate and still stand. Confirm all of it, and give us real dates for the "by end of 2026" column.</p>
+      </div>
+    </li>
+
+    <li class="item">
+      <div class="n">7</div>
+      <div>
+        <p class="ask">Board and staff rosters — plus consent to publish names.</p>
+        <p class="why">The draft deliberately shows the board as a structure — nine directors, two of whom are staff — rather than naming real people on a page you have not approved. The same question applies to a staff page: we would like one, and we are not going to publish anyone’s name or photograph until you tell us who has agreed to it.</p>
+      </div>
+    </li>
+
+    <li class="item">
+      <div class="n">8</div>
+      <div>
+        <p class="ask">Photo permission.</p>
+        <p class="why">The draft reuses four photographs from your current site. Confirm we may use them, and whether any child pictured lacks a media release.</p>
+      </div>
+    </li>
+
+  </ol>
+
+  <div class="sechead"><span class="letter">B</span><h3>Figures to confirm or reconcile</h3></div>
+  <ol class="items">
+
+    <li class="item"><div class="n">9</div><div>
+      <p class="ask">Read 2 Succeed enrollment — 178 enrolled, 173 completed.</p>
+      <p class="why">Confirm both. The site derives 97% retention from them.</p>
+    </div></li>
+
+    <li class="item"><div class="n">10</div><div>
+      <p class="ask">HopeKidz weekly attendance.</p>
+      <p class="why">Your 2025 report says <strong>65 children weekly</strong>; your website says <strong>nearly 100</strong>. We used 65.</p>
+    </div></li>
+
+    <li class="item"><div class="n">11</div><div>
+      <span class="chip gap">Left off the site entirely</span>
+      <p class="ask">Reading growth — the instrument and the method.</p>
+      <p class="why">Your 2025 report gives <strong>336</strong> points in one place and <strong>436</strong> in two others for the same cohort, and mixes a <strong>Lexile</strong> measure with a <strong>reading composite score</strong> — two scales that cannot be averaged. The PS 44 and PS 57 sections also carry identical numbers, which looks like a copy-paste. We left the growth number off rather than pick one.</p>
+    </div></li>
+
+    <li class="item"><div class="n">12</div><div>
+      <p class="ask">Volunteers — 150.</p>
+      <p class="why">Confirm whether 150 is sign-ups or placements. The site says "signed up to tutor."</p>
+    </div></li>
+
+    <li class="item"><div class="n">13</div><div>
+      <p class="ask">Title I status, school by school.</p>
+      <p class="why">Asserted on your current site, but we could not verify it per school, so the draft says "public and charter" instead.</p>
+    </div></li>
+
+    <li class="item"><div class="n">14</div><div>
+      <p class="ask">Neighborhood for each of the eight partner schools.</p>
+      <p class="why">We inferred them from school district and marked them for verification.</p>
+    </div></li>
+
+    <li class="item"><div class="n">15</div><div>
+      <p class="ask">"35+ years."</p>
+      <p class="why">That appears to be David's ministry tenure; the organization's IRS ruling is <strong>April 2011</strong>. The draft separates the two rather than let a funder find the gap — confirm that framing is right.</p>
+    </div></li>
+
+    <li class="item"><div class="n">16</div><div>
+      <p class="ask">Grant amounts and periods for the named funders.</p>
+      <p class="why">National Christian Charitable Foundation, Hope for New York, Minneapolis Foundation, Staten Island Foundation and DYCD are listed without amounts.</p>
+    </div></li>
+
+    <li class="item"><div class="n">17</div><div>
+      <p class="ask">The Christmas toy count.</p>
+      <p class="why">Reports show roughly <strong>25,000 toys in 2023 falling to 7,000 in 2024</strong> — a 72% drop with no explanation. One sentence of context and the program goes back on the site.</p>
+    </div></li>
+
+    <li class="item"><div class="n">18</div><div>
+      <span class="chip gap">Left off the site entirely</span>
+      <p class="ask">Game Changers' "60% dropout reduction / 70% behavior improvement."</p>
+      <p class="why">No source, baseline, sample or method anywhere. It goes back only with an evaluation behind it — an unsourceable number makes a funder doubt every other number on the page.</p>
+    </div></li>
+
+    <li class="item"><div class="n">19</div><div>
+      <p class="ask">The North Shore poverty figures.</p>
+      <p class="why">We cite roughly 150,000 residents and 37% child poverty in Stapleton, from the Citizens' Committee for Children 2020 report. Confirm you are happy citing that source.</p>
+    </div></li>
+
+  </ol>
+
+  <div class="sechead"><span class="letter">C</span><h3>Documents to host on the site</h3></div>
+  <p class="partnote">This is the funder packet the site promises. None of it exists as a link yet.</p>
+  <ul class="docs">
+    <li>Form 990s — 2021, 2022, and the amended 2023 <span>we have the IRS XML; you have the PDF</span></li>
+    <li>End-of-year reports — 2023, 2024, 2025</li>
+    <li>Current-year budget, with the funding gap stated</li>
+    <li>IRS determination letter <span>501(c)(3), April 2011</span></li>
+    <li>Audited financial statements <span>if any exist — Charity Navigator says none do</span></li>
+    <li>Logic model or theory of change <span>Cities of Joy has the raw material, but it is undated and carries no numbers</span></li>
+    <li>DOE partnership documentation, and letters of support from the partners you name <span>DOE, NYPD, Borough President</span></li>
+  </ul>
+
+  <div class="sechead"><span class="letter">D</span><h3>The Get Involved page</h3></div>
+  <p class="partnote">Added 31 August. The page is built and live on the draft; these three answers decide whether it stays as drafted.</p>
+  <ol class="items">
+
+    <li class="item"><div class="n">20</div><div>
+      <span class="chip gap">We built forms for these — we cannot source them</span>
+      <p class="ask">Do internships and short-term teams actually exist as programs?</p>
+      <p class="why">The page offers both, because they are the kind of thing an organization like yours usually runs. But we found <strong>no mention of either</strong> in your reports or on your current site, so the page asserts nothing about them: terms, hours, stipend, credit, available weeks, group size, housing and cost are all left as red brackets. If either does not exist, say so and we will cut the section rather than advertise something you cannot deliver.</p>
+    </div></li>
+
+    <li class="item"><div class="n">21</div><div>
+      <p class="ask">Where should form submissions go?</p>
+      <p class="why">All four forms are deliberately <strong>inert</strong> — submitting shows a plain notice saying the draft is not connected and nothing was sent. We would rather collect nothing than collect real names and email addresses, possibly including volunteers who will work with children, on a site you have not approved. Give us the destination (see ask 5) and we will wire them up.</p>
+    </div></li>
+
+    <li class="item"><div class="n">22</div><div>
+      <p class="ask">Confirm giving stays where it is.</p>
+      <p class="why">You already take donations through Wix, with PayPal and Stripe behind it, and the draft simply links out to that page rather than rebuilding it. That is the right call as long as you stay on Wix. If this redesign ever replaces your current site, giving needs a real migration — a processor, your bank details, and receipting — which is a separate piece of work, not a page.</p>
+    </div></li>
+
+  </ol>
+</section>
+
+<!-- ============ QUESTIONS ============ -->
+<section class="part" id="questions">
+  <div class="parthead"><span class="partmark">4</span><h2>Seven questions, and then we build</h2></div>
+  <p class="partnote">These are genuinely open. Your answers change the design, not just the wording.</p>
+
+  <ol class="decisions">
+
+    <li class="decision lead"><div class="n"></div><div>
+      <p class="ask">Where is the gravity of your future programming?</p>
+      <p class="why">We led with literacy because that is where your evidence is strongest today — named schools, enrollment counts, a measurable outcome. But that is a read of your <em>past</em> two years, not a statement about your next five. If the center of gravity is moving — toward the summer jobs work, toward Care Portal, toward the Cities of Joy church-planting frame, toward something not on the site at all — tell us now.</p>
+      <p class="why">It is the one piece of feedback that would change the structure of the site rather than its wording.</p>
+    </div></li>
+
+    <li class="decision"><div class="n"></div><div>
+      <p class="ask">Does literacy lead, or does it share the lead with the summer jobs program?</p>
+      <p class="why">SYEP is your most fundable and most independently verifiable work — a City program, third year running — and it appears nowhere on your current site.</p>
+    </div></li>
+
+    <li class="decision"><div class="n"></div><div>
+      <p class="ask">Is the split between Urban Hope's own numbers and the coalition's drawn in the right place?</p>
+    </div></li>
+
+    <li class="decision"><div class="n"></div><div>
+      <p class="ask">Are you willing to publish the accountability table as drafted — gaps, 2026 plan and all?</p>
+    </div></li>
+
+    <li class="decision"><div class="n"></div><div>
+      <p class="ask">Is the faith framing right?</p>
+      <p class="why">Present and plainly stated, with an explicit line between school-day tutoring in DOE buildings and the Bible clubs.</p>
+    </div></li>
+
+    <li class="decision"><div class="n"></div><div>
+      <p class="ask">Should Game Changers, Christmas and Care Portal come back in — and on what evidence?</p>
+    </div></li>
+
+    <li class="decision"><div class="n"></div><div>
+      <p class="ask">Who is the real audience?</p>
+      <p class="why">One named foundation you are about to approach, or every funder at once? A named target would sharpen the whole site considerably.</p>
+    </div></li>
+
+  </ol>
+</section>
+
+
+<!-- ============ IDENTITY ============ -->
+<section class="part" id="identity">
+  <div class="parthead"><span class="partmark">5</span><h2>The identity</h2></div>
+  <p class="partnote">Reference, not a decision — the system the draft site is built on.</p>
+
+  <p class="concept"><strong>A house built of books.</strong> The mark is an open book that reads as a roof. Literacy is the shelter. Everything else descends from that one idea: warm paper, deep harbor navy, and a single amber reserved for what a reader should act on.</p>
+
+  <div class="lockups">
+    <div class="lock" style="background:#FFFFFF">
+      <div class="wordmark" style="color:#14405E">
+        <svg width="42" height="42" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 7 L5.5 17.5 L5.5 39 L24 30.5 Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 7 L42.5 17.5 L42.5 39 L24 30.5 Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 7 L24 30.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <div>
+          <div class="wm1" style="color:#0F212D">URBAN HOPE</div>
+          <div class="wm2" style="color:#96590A">NEW YORK CITY</div>
+        </div>
+      </div>
+      <p class="cap" style="color:#5A6771">Primary / horizontal</p>
+    </div>
+    <div class="lock" style="background:#0F212D">
+      <div class="wordmark" style="color:#E8A33D">
+        <svg width="42" height="42" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 7 L5.5 17.5 L5.5 39 L24 30.5 Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 7 L42.5 17.5 L42.5 39 L24 30.5 Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 7 L24 30.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <div>
+          <div class="wm1" style="color:#F7F2E9">URBAN HOPE</div>
+          <div class="wm2" style="color:#E8A33D">NEW YORK CITY</div>
+        </div>
+      </div>
+      <p class="cap" style="color:#7E939F">Reversed / dark ground</p>
+    </div>
+    <div class="lock" style="background:#E8A33D">
+      <div style="color:#0F212D"><svg width="58" height="58" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 7 L5.5 17.5 L5.5 39 L24 30.5 Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 7 L42.5 17.5 L42.5 39 L24 30.5 Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 7 L24 30.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></div>
+      <p class="cap" style="color:#4A3305">Mark alone / avatar, favicon</p>
+    </div>
+  </div>
+
+  <div class="sechead"><span class="letter">Color</span><h3>Amber is rationed</h3></div>
+  <div class="swatches">
+      <div class="sw"><div class="plate"><div class="chipc" style="background:#0F212D"></div></div><p class="nm">Ink</p><p class="hx">#0F212D</p><p class="use">body copy, headlines</p></div>
+      <div class="sw"><div class="plate"><div class="chipc" style="background:#14405E"></div></div><p class="nm">Harbor</p><p class="hx">#14405E</p><p class="use">section grounds</p></div>
+      <div class="sw"><div class="plate"><div class="chipc" style="background:#E8A33D"></div></div><p class="nm">Amber</p><p class="hx">#E8A33D</p><p class="use">actions; figures on dark</p></div>
+      <div class="sw"><div class="plate"><div class="chipc" style="background:#96590A"></div></div><p class="nm">Amber Deep</p><p class="hx">#96590A</p><p class="use">links on paper</p></div>
+      <div class="sw"><div class="plate"><div class="chipc" style="background:#EFE8DB"></div></div><p class="nm">Card</p><p class="hx">#EFE8DB</p><p class="use">raised surfaces</p></div>
+      <div class="sw"><div class="plate"><div class="chipc" style="background:#F7F2E9"></div></div><p class="nm">Paper</p><p class="hx">#F7F2E9</p><p class="use">page ground</p></div>
+  </div>
+  <p class="txt">Amber is for calls to action and for figures on dark grounds. Never body copy, never decoration. On paper it darkens to Amber Deep so it stays legible.</p>
+
+  <div class="sechead"><span class="letter">Type</span><h3>Three faces, three jobs</h3></div>
+  <div class="faces">
+    <div class="face">
+      <p class="role">Newsreader · display &amp; editorial</p>
+      <p class="spec-serif">Reading is a way out.</p>
+      <p class="gloss">Section headings at 34/1.1, and standfirsts at 21/1.45 — enough weight to carry a paragraph of argument without shouting.</p>
+    </div>
+    <div class="face">
+      <p class="role">Archivo · interface, labels, navigation</p>
+      <p class="spec-sans">Grants &amp; Accountability</p>
+      <p class="gloss">Body copy at 16/1.65. Short sentences, concrete nouns. A program officer reads eleven of these a day, so every clause has to earn the next one.</p>
+    </div>
+    <div class="face">
+      <p class="role">IBM Plex Mono · provenance layer</p>
+      <p class="spec-mono">SOURCE: IRS FORM 990, FY2023 · SELF-REPORTED</p>
+      <p class="gloss">Every number on the site carries one of these. It is the single most persuasive thing on a nonprofit page, and almost no one does it.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3>Also worth knowing</h3>
+  <p class="partnote" style="margin-bottom:18px">Fixed by the new site, but live problems on the current one today.</p>
+  <div class="livefix">
+    <code>/who-we-are</code> and <code>/about</code> both 404<br>
+    Game Changers sits at <code>/copy-of-contact-us</code><br>
+    Care Portal at <code>/copy-of-game-changer</code><br>
+    <code>/voluteer-with-us</code> is misspelled<br>
+    a stale <code>/covid-19</code> page remains
+  </div>
+
+  <p class="closing">Mark up anything. Nothing here is precious — it is a draft written to be argued with.</p>
+
+  <p class="sign">
+    Concept work · not commissioned · not published or indexed<br>
+    Figures sourced from Urban Hope's 2024 and 2025 End-of-Year Reports, IRS filings and Charity Navigator<br>
+    Two alternate visual directions were explored and are not included here — ask if you want to see them
+  </p>
+</footer>
+
+</div>
+
+</body>
+</html>
