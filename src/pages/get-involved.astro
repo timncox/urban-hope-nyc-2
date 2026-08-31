@@ -1,0 +1,361 @@
+---
+import Base from "../layouts/Base.astro";
+
+const routes = [
+  { id: "volunteer",  label: "Volunteer",        note: "One hour a week, inside a school" },
+  { id: "newsletter", label: "Newsletter",       note: "What happened this month, briefly" },
+  { id: "internship", label: "Internship",       note: "A term with us, for credit or not" },
+  { id: "missions",   label: "Short-term teams", note: "Bring a group for a week" },
+];
+---
+<Base title="Get Involved" pageSlug="/get-involved">
+
+  <!-- ══ HERO ══ -->
+  <section class="gi-hero">
+    <span class="gi-eyebrow">Four ways in</span>
+    <h1 class="gi-h1">Get involved</h1>
+    <p class="gi-standfirst">Most of what we do runs on people who show up weekly. Below are the four routes in — pick the one that fits the time you actually have, not the time you wish you had.</p>
+  </section>
+
+  <!-- ══ ROUTE CARDS ══ -->
+  <section class="gi-routes">
+    <div class="gi-routes-grid">
+      {routes.map((r, i) => (
+        <a class="gi-route" href={`#${r.id}`}>
+          <span class="gi-route-num">{String(i + 1).padStart(2, "0")}</span>
+          <span class="gi-route-label">{r.label}</span>
+          <span class="gi-route-note">{r.note}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ══ VOLUNTEER ══ -->
+  <section class="gi-block" id="volunteer">
+    <span class="gi-section-label">01 — Volunteer</span>
+    <h2 class="gi-h2">One hour a week, January to June.</h2>
+    <p class="gi-intro">No teaching background required. Training and books are provided, and we handle fingerprinting, the background check and DOE visitor clearance before you meet a child. The ask is consistency: the same child, the same hour, every week until June.</p>
+
+    <form class="gi-form" data-inert novalidate>
+      <div class="gi-grid-2">
+        <label class="gi-field">
+          <span class="gi-label">Your name</span>
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label">Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label">Phone <em>optional</em></span>
+          <input type="tel" name="phone" autocomplete="tel" />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label">Where you'd like to help</span>
+          <select name="program">
+            <option>Read 2 Succeed — weekly reading tutor</option>
+            <option>HopeKidz — after-school</option>
+            <option>Summer Streets</option>
+            <option>Wherever you need me most</option>
+          </select>
+        </label>
+      </div>
+      <fieldset class="gi-fieldset">
+        <legend class="gi-label">When you're free</legend>
+        <div class="gi-checks">
+          <label><input type="checkbox" name="availability" value="weekday-am" /> Weekday mornings</label>
+          <label><input type="checkbox" name="availability" value="weekday-pm" /> Weekday afternoons</label>
+          <label><input type="checkbox" name="availability" value="after-school" /> After school</label>
+          <label><input type="checkbox" name="availability" value="weekends" /> Weekends</label>
+        </div>
+      </fieldset>
+      <label class="gi-field">
+        <span class="gi-label">Anything we should know <em>optional</em></span>
+        <textarea name="notes" rows="3"></textarea>
+      </label>
+      <button class="gi-submit" type="submit">Send my interest</button>
+      <p class="gi-formnote" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- ══ NEWSLETTER ══ -->
+  <section class="gi-news" id="newsletter">
+    <div class="gi-news-inner">
+      <div>
+        <span class="gi-section-label gi-on-dark">02 — Newsletter</span>
+        <h2 class="gi-h2 gi-h2-dark">What happened this month, in about two minutes.</h2>
+        <p class="gi-intro gi-intro-dark">Numbers, one story, and what we need next. No appeals disguised as updates.</p>
+      </div>
+      <form class="gi-form gi-form-inline" data-inert novalidate>
+        <label class="gi-field">
+          <span class="gi-label gi-on-dark">Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label gi-on-dark">First name <em>optional</em></span>
+          <input type="text" name="firstname" autocomplete="given-name" />
+        </label>
+        <button class="gi-submit gi-submit-amber" type="submit">Subscribe</button>
+        <p class="gi-formnote gi-formnote-dark" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══ INTERNSHIP ══ -->
+  <section class="gi-block" id="internship">
+    <span class="gi-section-label">03 — Internship</span>
+    <h2 class="gi-h2">Spend a term inside a small organization.</h2>
+    <p class="gi-intro">You will not be fetching coffee. Interns here sit close to the programs — tutoring, running a site, cleaning up the data, helping with grant reporting.</p>
+    <p class="gi-red">[ Terms, hours, stipend and credit arrangements to confirm with Urban Hope ]</p>
+
+    <form class="gi-form" data-inert novalidate>
+      <div class="gi-grid-2">
+        <label class="gi-field">
+          <span class="gi-label">Your name</span>
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label">Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label">School or program <em>optional</em></span>
+          <input type="text" name="school" />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label">Which term</span>
+          <select name="term">
+            <option>Fall</option>
+            <option>Spring</option>
+            <option>Summer</option>
+            <option>Flexible</option>
+          </select>
+        </label>
+      </div>
+      <label class="gi-field">
+        <span class="gi-label">What you'd want to work on</span>
+        <textarea name="interest" rows="3"></textarea>
+      </label>
+      <button class="gi-submit" type="submit">Send my interest</button>
+      <p class="gi-formnote" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- ══ SHORT-TERM TEAMS ══ -->
+  <section class="gi-block gi-block-card" id="missions">
+    <span class="gi-section-label">04 — Short-term teams</span>
+    <h2 class="gi-h2">Bring a group for a week.</h2>
+    <p class="gi-intro">Groups work best when the work is real and the expectations are set early. Tell us who you are and roughly when, and we will tell you honestly whether that week is useful to us.</p>
+    <p class="gi-red">[ Available weeks, group size limits, housing and cost to confirm with Urban Hope ]</p>
+
+    <form class="gi-form" data-inert novalidate>
+      <div class="gi-grid-2">
+        <label class="gi-field">
+          <span class="gi-label">Your name</span>
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label">Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label">Church or organization <em>optional</em></span>
+          <input type="text" name="org" />
+        </label>
+        <label class="gi-field">
+          <span class="gi-label">Roughly how many people</span>
+          <select name="size">
+            <option>Just me</option>
+            <option>2–5</option>
+            <option>6–12</option>
+            <option>13–25</option>
+            <option>More than 25</option>
+          </select>
+        </label>
+      </div>
+      <label class="gi-field">
+        <span class="gi-label">When you're thinking</span>
+        <input type="text" name="window" placeholder="e.g. a week in July 2027" />
+      </label>
+      <button class="gi-submit" type="submit">Start the conversation</button>
+      <p class="gi-formnote" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- ══ GIVE ══ -->
+  <section class="gi-give">
+    <div class="gi-give-inner">
+      <span class="gi-section-label gi-on-amber">Or give</span>
+      <h2 class="gi-h2 gi-h2-ink">Giving already works — it just lives somewhere else.</h2>
+      <p class="gi-intro gi-intro-ink">Urban Hope takes donations today through its existing site. Nothing about this draft changes that, and the button below goes straight there.</p>
+      <a class="gi-btn-dark" href="https://www.urbanhopenyc.org/donate" rel="noopener">Give at urbanhopenyc.org</a>
+      <p class="gi-red gi-red-ink">[ Confirm this stays the giving destination — if Urban Hope leaves Wix, this needs a replacement processor ]</p>
+    </div>
+  </section>
+
+</Base>
+
+<script>
+  // Every form on this page is deliberately inert: this is a concept draft and
+  // there is no inbox to route submissions to yet (see ask A5, shared inbox).
+  // Collecting real names and emails on an unapproved draft would be worse than
+  // collecting nothing, so we say so plainly instead of faking a success state.
+  document.querySelectorAll("form[data-inert]").forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const note = form.querySelector(".gi-formnote");
+      if (!note) return;
+      note.textContent =
+        "This is a concept draft — the form is not connected yet, so nothing was sent. Once Urban Hope confirms a shared inbox, this will submit for real.";
+      note.classList.add("is-shown");
+    });
+  });
+</script>
+
+<style>
+  /* ── shared ── */
+  .gi-eyebrow {
+    font-family: var(--mono); font-size: .68rem; font-weight: 500;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--amber);
+    display: block; margin-bottom: 1.1rem;
+  }
+  .gi-hero { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+  .gi-h1 {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    font-size: clamp(3.6rem, 10vw, 7rem); letter-spacing: -.035em; line-height: 1;
+    color: var(--navy); margin: 0 0 1.5rem;
+  }
+  .gi-standfirst {
+    font-family: var(--sans); font-size: 1.1rem; font-weight: 300; line-height: 1.75;
+    color: var(--ink); max-width: 58ch; margin: 0;
+  }
+  .gi-section-label {
+    font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--amber); display: block; margin-bottom: 1.5rem;
+  }
+  .gi-on-dark { color: #E8A33D; }
+  .gi-on-amber { color: #3d2600; }
+  .gi-h2 {
+    font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.7rem); font-weight: 300;
+    font-style: italic; color: var(--navy); letter-spacing: -.025em; line-height: 1.15;
+    margin: 0 0 1.25rem; max-width: 24ch;
+  }
+  .gi-h2-dark { color: #f0f6fa; }
+  .gi-h2-ink  { color: var(--ink); }
+  .gi-intro {
+    font-family: var(--sans); font-size: 1rem; font-weight: 300; line-height: 1.75;
+    color: var(--ink); max-width: 62ch; margin: 0 0 2.25rem;
+  }
+  .gi-intro-dark { color: #b8cdd9; }
+  .gi-intro-ink  { color: #3d2600; }
+  .gi-red {
+    font-family: var(--mono); font-size: .65rem; letter-spacing: .05em;
+    color: #c0392b; line-height: 1.6; display: block; margin: -1.25rem 0 2rem;
+  }
+  .gi-red-ink { color: #6b3410; margin: 1.5rem 0 0; }
+
+  /* ── route cards ── */
+  .gi-routes { padding: 3.5rem 0 1rem; }
+  .gi-routes-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border: 1.5px solid var(--rule);
+  }
+  @media (max-width: 780px) { .gi-routes-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 420px) { .gi-routes-grid { grid-template-columns: 1fr; } }
+  .gi-route {
+    display: flex; flex-direction: column; gap: .45rem; padding: 1.75rem 1.5rem;
+    background: #fff; border-right: 1px solid var(--rule);
+    text-decoration: none !important; transition: background .18s;
+  }
+  .gi-routes-grid .gi-route:last-child { border-right: none; }
+  .gi-route:hover { background: var(--card); }
+  .gi-route-num {
+    font-family: var(--serif); font-size: 2rem; font-weight: 300; line-height: 1; color: var(--amber);
+  }
+  .gi-route-label {
+    font-family: var(--sans); font-size: .95rem; font-weight: 500; color: var(--navy);
+  }
+  .gi-route-note {
+    font-family: var(--sans); font-size: .82rem; font-weight: 300; line-height: 1.45; color: var(--muted);
+  }
+
+  /* ── blocks ── */
+  .gi-block { padding: 4.5rem 0 1rem; border-top: 1px solid var(--rule); margin-top: 3.5rem; scroll-margin-top: 1rem; }
+  .gi-block-card { }
+
+  /* ── forms ── */
+  .gi-form { max-width: 60ch; margin-top: .5rem; }
+  .gi-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  @media (max-width: 560px) { .gi-grid-2 { grid-template-columns: 1fr; } }
+  .gi-field { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.25rem; }
+  .gi-label {
+    font-family: var(--mono); font-size: .62rem; font-weight: 500; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .gi-label em { font-style: normal; text-transform: none; letter-spacing: .04em; opacity: .75; }
+  .gi-form input[type="text"], .gi-form input[type="email"], .gi-form input[type="tel"],
+  .gi-form select, .gi-form textarea {
+    font-family: var(--sans); font-size: .95rem; font-weight: 300; color: var(--ink);
+    background: #fff; border: 1.5px solid var(--rule); border-radius: 0;
+    padding: .7rem .8rem; width: 100%; transition: border-color .18s;
+  }
+  .gi-form input:focus, .gi-form select:focus, .gi-form textarea:focus {
+    outline: none; border-color: var(--amber);
+  }
+  .gi-form textarea { resize: vertical; }
+  .gi-fieldset { border: 0; padding: 0; margin: 0 0 1.25rem; }
+  .gi-checks { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem .75rem; margin-top: .55rem; }
+  @media (max-width: 560px) { .gi-checks { grid-template-columns: 1fr; } }
+  .gi-checks label {
+    font-family: var(--sans); font-size: .9rem; font-weight: 300; color: var(--ink);
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .gi-submit {
+    font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .1em;
+    text-transform: uppercase; background: var(--ink); color: var(--paper);
+    border: 2px solid var(--ink); padding: .75rem 1.5rem; cursor: pointer;
+    transition: background .18s; margin-top: .25rem;
+  }
+  .gi-submit:hover { background: #1e3040; border-color: #1e3040; }
+  .gi-submit-amber { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+  .gi-submit-amber:hover { background: #d4912a; border-color: #d4912a; color: var(--ink); }
+  .gi-formnote {
+    font-family: var(--sans); font-size: .85rem; font-weight: 300; line-height: 1.55;
+    color: #c0392b; margin: .9rem 0 0; max-width: 52ch; display: none;
+  }
+  .gi-formnote.is-shown { display: block; }
+  .gi-formnote-dark { color: #E8A33D; }
+
+  /* ── newsletter band (full-bleed) ──
+     The escape must clear BOTH nested containers (.container > main, each with
+     2.5rem padding), so padding is calc(50vw - 540px), NOT (100vw - 1240px)/2.
+     Declared here in the page's own scoped styles so nothing can out-specify it. */
+  .gi-news, .gi-give {
+    width: 100vw; max-width: 100vw;
+    margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    padding-inline: max(2.5rem, calc(50vw - 540px));
+  }
+  .gi-news {
+    background: var(--navy); border-top: 4px solid var(--amber);
+    padding-top: 4.5rem; padding-bottom: 5rem; margin-top: 4.5rem;
+  }
+  .gi-news-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+  @media (max-width: 820px) { .gi-news-inner { grid-template-columns: 1fr; gap: 2.25rem; } }
+  .gi-form-inline { max-width: none; }
+  .gi-news .gi-form input { background: #ffffff0d; border-color: #1E5070; color: #f0f6fa; }
+  .gi-news .gi-form input:focus { border-color: var(--amber); }
+
+  /* ── give band ── */
+  .gi-give {
+    background: var(--amber); border-top: 4px solid var(--ink);
+    padding-top: 4.5rem; padding-bottom: 5rem; margin-top: 4.5rem;
+  }
+  .gi-give-inner { max-width: 62ch; }
+  .gi-btn-dark {
+    font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .1em;
+    text-transform: uppercase; background: var(--ink); color: var(--paper);
+    border: 2px solid var(--ink); padding: .8rem 1.6rem; text-decoration: none !important;
+    display: inline-block; transition: background .18s;
+  }
+  .gi-btn-dark:hover { background: #1e3040; border-color: #1e3040; color: var(--paper); }
+</style>
