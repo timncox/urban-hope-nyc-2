@@ -287,6 +287,14 @@ const routes = [
   .gi-form { max-width: 60ch; margin-top: .5rem; }
   .gi-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   @media (max-width: 560px) { .gi-grid-2 { grid-template-columns: 1fr; } }
+
+  /* iOS Safari auto-zooms when you focus an input whose font-size is under 16px,
+     and does not zoom back out. Ours computed to 15.2px, so every tap on every
+     field re-scaled the page. 16px exactly on small screens. */
+  @media (max-width: 620px) {
+    .gi-form input[type="text"], .gi-form input[type="email"], .gi-form input[type="tel"],
+    .gi-form select, .gi-form textarea { font-size: 16px; }
+  }
   .gi-field { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.25rem; }
   .gi-label {
     font-family: var(--mono); font-size: .62rem; font-weight: 500; letter-spacing: .16em;
